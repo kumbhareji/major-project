@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Docu-Track</title>
+    <link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+
+<body>
+<a href="/" id="heading">RGPV</a>
+    <div class="container">
+      <div class="backbox">
+        <div class="loginMsg">
+          <div class="textcontent">
+            <p class="title">Don't have an account?</p>
+            <p>Sign up to track your documents.</p>
+            <button id="switch1">Sign Up</button>
+          </div>
+        </div>
+        <div class="signupMsg visibility">
+          <div class="textcontent">
+            <p class="title">Have an account?</p>
+            <p>Log in to check status of documents.</p>
+            <button id="switch2">LOG IN</button>
+          </div>
+        </div>
+      </div>
+      <!-- backbox -->
+  
+      <div class="frontbox">
+        <div class="login">
+          <h2>LOG IN</h2>
+          <form action="/login" method="POST" class="inputbox">
+            <input type="text" id="username" name="username" placeholder="  USERNAME" required>
+            <input type="password" id="password" name="password" placeholder="  PASSWORD" required>
+            <p>FORGET PASSWORD?</p>
+            <button type="submit">LOG IN</button>
+          </form>
+        </div>
+  
+        <div class="signup hide">
+          <h2>SIGN UP</h2>
+          <div class="inputbox" >
+          <form action="/register" method="POST">
+            <input type="text" id="username" name="username" placeholder="  USERNAME" required>
+            <input type="text" id="email" name="email" placeholder="  EMAIL" required>
+            <input type="password" id="password" name="password" placeholder="  PASSWORD" required>
+            <button type="submit">SIGN UP</button>
+          </form>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/form.js"></script>
+</body>
+</html>

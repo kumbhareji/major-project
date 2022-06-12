@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
+</head>
+
+<body>
+<h1>New Upload</h1>
+<div class="new-upload">
+    <form action="/posts" method="POST" class="form" id="imageForm" enctype="multipart/form-data">
+        <h3>Upload New Document</h3>
+        <label for="title">Title of Document</label>
+        <input type="text" name="post[title]" id="title">
+        <div class="file-upload">
+            <div class="file-select">
+                <div class="file-select-button" id="fileName">Choose File</div>
+                <div class="file-select-name" id="noFile">No file chosen...</div> 
+                <input type="file" name="images" id="images" accept="images/*" multiple>
+            </div>
+        </div>
+        <label for="To">To:</label>
+        <input type="text" name="post[to]" id="to">
+        <label for="remarks">Remarks</label>
+        <textarea name="post[description]" id="remark" cols="30" rows=5"></textarea>
+        <button type="submit" id="btn-submit">Submit Ticket</button>
+    </form>
+</div>
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/javascripts/dashboard.js"></script>
+</body>
+</html>

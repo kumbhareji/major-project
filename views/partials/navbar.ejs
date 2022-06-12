@@ -1,0 +1,21 @@
+<style>
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		display: inline;
+		padding: 5px;
+	}
+</style>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/aboutus">AboutUs</a></li>
+    <% if(!currentUser) { %>
+        <a href="/login">Login</a> 
+        <% } else { %>
+        <a href="/logout">Logout</a> 
+        Welcome, <%= currentUser.username %>
+        <% } %> 
+</ul>

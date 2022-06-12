@@ -1,0 +1,19 @@
+<h1><%= post.title %> </h1>
+<h4>To: <%= post.to %> </h4>
+<div>Description: <%= post.description %> </div>
+<div>
+    <% post.images.forEach(function(image) { %> 
+        <img src="<%= image.url %> " alt="Picture" width="150px">
+    <% }); %> 
+</div>
+<div>
+	<a href="/posts/<%= post.id %>/edit">
+		<button>Edit</button>
+	</a>
+</div>
+<div>
+<div>
+    <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
+        <input type="submit" value="Delete">
+    </form>
+</div>
