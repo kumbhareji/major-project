@@ -1,23 +1,40 @@
-<h1>Edit Post!</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<form action="/posts/<%= post.id %>?_method=PUT" method="POST" id="postEditForm" enctype="multipart/form-data">
-	<div><input type="text" name="post[title]" placeholder="Title" value="<%= post.title  %>"></div>
-	<div><input type="text" name="post[to]" placeholder="to" value="<%= post.to  %>"></div>
-	<div>
-		<input type="file" id="imageUpload" accept="images/*" name="images" multiple />
-		<div>
-		<% post.images.forEach(function(image, i) { %>
-			<img src="<%= image.url %>" width="100px" />
-			<label for="image<%= i %>">Delete?</label>
-			<input type="checkbox" name="deleteImages[]" class="imageDeleteCheckbox" id="image<%= i %>" value="<%= image.public_id %>">
-		<% }); %>
-		</div>
-	</div>
-	<div>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
+</head>
+<body>
+	</form>
+    <a href="/" id="heading">RGPV</a>
+    <div class="new-upload">
+		<form action="/posts/<%= post.id %>?_method=PUT" method="POST" id="postEditForm" enctype="multipart/form-data" class="form">
+			<h3>Edit Document</h3>
+        <label for="title">Title of Document</label>
+        <input type="text" name="post[title]" placeholder="Title" value="<%= post.title  %>">
+        <div class="file-upload">
+            <div class="file-select">
+                <div class="file-select-button" id="fileName">Choose File</div>
+                <div class="file-select-name" id="noFile">No file chosen...</div> 
+                <input type="file" id="imageUpload" accept="images/*" name="images" multiple />
+			</div>
+			<div>
+			<% post.images.forEach(function(image, i) { %>
+				<img src="<%= image.url %>" width="100px" />
+				<label for="image<%= i %>">Delete?</label>
+				<input type="checkbox" name="deleteImages[]" class="imageDeleteCheckbox" id="image<%= i %>" value="<%= image.public_id %>">
+			<% }); %>
+			</div>
+        </div>
+        <label for="To">To:</label>
+        <input type="text" name="post[to]" placeholder="to" value="<%= post.to  %>">
+        <label for="remarks">Remarks</label>
 		<textarea name="post[description]" placeholder="Description"><%= post.description  %></textarea>
-	</div>
-	<input type="submit">
-</form>
+        <button type="submit" id="btn-submit">Submit Ticket</button>
+    </form>
+</div>
+
 
 <script>
 	// find post edit form
@@ -44,3 +61,7 @@
 	});
 
 </script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/javascripts/dashboard.js"></script>
+</body>
+</html>

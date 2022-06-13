@@ -1,11 +1,22 @@
-<h1>Post Index</h1>
-
-<% posts.forEach(function(post) { %>
-    <div>
-        <h2><%= post.title %> </h2>
-        <h4>To: <%= post.to %> </h4>
-        <div><%= post.description %> </div>
-        <div><a href="/posts/<%= post.id %> ">View More</a></div>
+<% layout('layouts/boilerplate') %>
+<div class="show-posts">
+  <h2 class="show-title">Document List</h2>
+  <div class="post-list">
+    <% posts.forEach(function(post) { %>
+    <div class="card">
+      <div>
+        <span style="font-size: 30px;"><%= post.title %></span>
+      </div>
+      <div>
+        <span>To:</span>
+        <%= post.to %>
+      </div>
+      <div><%= post.description %></div>
+      <div>
+        <a href="/posts/<%= post.id %> " class="view-more">View More</a>
+      </div>
     </div>
-
-<% }); %> 
+    <% }); %>
+    <a href="/posts/new" class="card add-post">+</a>
+  </div>
+</div>

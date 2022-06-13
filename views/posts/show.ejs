@@ -1,19 +1,56 @@
-<h1><%= post.title %> </h1>
-<h4>To: <%= post.to %> </h4>
-<div>Description: <%= post.description %> </div>
-<div>
-    <% post.images.forEach(function(image) { %> 
-        <img src="<%= image.url %> " alt="Picture" width="150px">
-    <% }); %> 
-</div>
-<div>
-	<a href="/posts/<%= post.id %>/edit">
-		<button>Edit</button>
-	</a>
-</div>
-<div>
-<div>
-    <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
-        <input type="submit" value="Delete">
-    </form>
+<% layout('layouts/boilerplate') %> 
+<div class="show-section">
+<section class="root">
+    <figure>
+      <img src="/images/tabs.svg" alt="img">
+      <figcaption>
+        <h1><%= post.title %> </h1>
+        <h4>Tracking Details</h4>
+        <h6>Description: <%= post.description %></h6>
+        <div>
+            <% post.images.forEach(function(image) { %> 
+                <img src="<%= image.url %> " alt="Picture" width="150px">
+            <% }); %> 
+        </div>
+        <a href="/posts/<%= post.id %>/edit">
+            <button>Edit</button>
+        </a>
+        <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
+            <input type="submit" value="Delete">
+        </form>
+      </figcaption>
+    </figure>
+    <div class="order-track">
+      <div class="order-track-step">
+        <div class="order-track-status">
+          <span class="order-track-status-dot"></span>
+          <span class="order-track-status-line"></span>
+        </div>
+        <div class="order-track-text">
+          <p class="order-track-text-stat">Document Uploaded</p>
+          <span class="order-track-text-sub">1st June, 2022</span>
+        </div>
+      </div>
+      <div class="order-track-step">
+        <div class="order-track-status">
+          <span class="order-track-status-dot"></span>
+          <span class="order-track-status-line"></span>
+        </div>
+        <div class="order-track-text">
+          <p class="order-track-text-stat">To: <%= post.to %> </p>
+          <span class="order-track-text-sub">3rd June, 2022</span>
+        </div>
+      </div>
+      <div class="order-track-step">
+        <div class="order-track-status">
+          <span class="order-track-status-dot"></span>
+          <span class="order-track-status-line"></span>
+        </div>
+        <div class="order-track-text">
+          <p class="order-track-text-stat"> Document with Dr. Harish Mehra</p>
+          <span class="order-track-text-sub">3rd June, 2022</span>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

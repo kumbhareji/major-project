@@ -1,21 +1,14 @@
-<style>
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-	}
-	li {
-		display: inline;
-		padding: 5px;
-	}
-</style>
-<ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/aboutus">AboutUs</a></li>
-    <% if(!currentUser) { %>
-        <a href="/login">Login</a> 
-        <% } else { %>
-        <a href="/logout">Logout</a> 
-        Welcome, <%= currentUser.username %>
-        <% } %> 
-</ul>
+<header>
+	<h2><a href="/">UIT-RGPV</a></h2>
+	<nav>
+		<li><a href="/aboutus" class="item">AboutUs</a></li>
+		<li><a href="/posts" class="item">Documents</a></li>
+		<% if(!currentUser) { %>
+			<li><a href="/login" class="item">Login</a></li>
+			<% } else { %>
+			<li><a href="/logout" class="item">Logout</a></li>
+			Welcome, <%= currentUser.username %>
+			<% } %> 
+	</nav>
+
+</header>

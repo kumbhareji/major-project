@@ -2,6 +2,11 @@ const User = require('../models/user');
 const passport = require('passport');
 
 module.exports = {
+    // GET AboutUs
+    aboutUs (req, res, next){
+        res.render('aboutus')
+    },
+
     //GET /
     landingPage (req, res, next){
         res.render('index', { title: 'UIT-RGPV' });

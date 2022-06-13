@@ -19,7 +19,7 @@ const postRouter = require('./routes/posts');
 const app = express();
 
 //Mongo connection
-mongoose.connect('mongodb+srv://admin:admin@docu-track.ifsxl.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect(`mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@docu-track.ifsxl.mongodb.net/?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
